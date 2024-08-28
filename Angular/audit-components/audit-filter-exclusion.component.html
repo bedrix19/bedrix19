@@ -1,0 +1,66 @@
+<mat-card appearance="outlined" class="mat-elevation-z3">
+  <mat-card-content>
+    <app-audit-filter></app-audit-filter>
+    <app-audit-exclusion></app-audit-exclusion>
+  </mat-card-content>
+  <mat-card-actions class="flex-row-wrap-space-between">
+    <div class="flex-row-start">
+      <div class="legend">
+        <mat-icon class="action-type-legend">fiber_manual_record</mat-icon><p i18n="@@action-legend.audit-filter-exclusion.component">Acciones</p>
+      </div>
+      <div class="legend">
+        <mat-icon class="event-type-legend">fiber_manual_record</mat-icon><p i18n="@@event-legend.audit-filter-exclusion.component">Eventos</p>
+      </div>
+      <div class="legend">
+        <mat-icon class="user-legend">fiber_manual_record</mat-icon><p i18n="@@user-legend.audit-filter-exclusion.component">Usuarios</p>
+      </div>
+      <div class="legend">
+        <mat-icon class="action-category-legend">fiber_manual_record</mat-icon><p i18n="@@action-category-legend.audit-filter-exclusion.component">Categoría de Acciones</p>
+      </div>
+      <div class="legend">
+        <mat-icon class="action-status-legend">fiber_manual_record</mat-icon><p i18n="@@action-status-legend.audit-filter-exclusion.component">Estado de Acciones</p>
+      </div>
+      <div class="legend">
+        <mat-icon class="device-legend">fiber_manual_record</mat-icon><p i18n="@@device-legend.audit-filter-exclusion.component">Dispositivos</p>
+      </div>
+      <div class="legend">
+        <mat-icon class="centre-legend">fiber_manual_record</mat-icon><p i18n="@@centre-legend.audit-filter-exclusion.component">Centros</p>
+      </div>
+      <div class="legend">
+        <mat-icon class="interruption-legend">fiber_manual_record</mat-icon><p i18n="@@interruption-legend.audit-filter-exclusion.component">Interrupciones</p>
+      </div>
+    </div>
+  </mat-card-actions>
+
+  <div *ngIf="!editEnable">
+    <div *ngIf="!isSmallDisplay()" class="flex-row-start button-container">
+      <button id="apply-filter-button" mat-raised-button color="primary" (click)="applyFilter()" i18n="@@apply-filter-button.audit-filter-exclusion.component">Aplicar Filtro</button>
+      <button *ngIf="admin"  id="apply-filter-button" mat-raised-button color="primary" (click)="openDialogSaveModal(true)" i18n="@@apply-filter-button.audit-filter-exclusion.component">Guardar Filtro Global</button>
+      <button mat-raised-button color="primary" (click)="openDialogSaveModal(false)" i18n="@@apply-filter-button.audit-filter-exclusion.component">Guardar Filtro</button>
+      <button mat-raised-button color="primary" (click)="openDialogLoadModal()" i18n="@@apply-filter-button.audit-filter-exclusion.component">Cargar Filtro</button>
+      <button mat-raised-button color="primary" (click)="openDialogEditModal()" i18n="@@apply-filter-button.audit-filter-exclusion.component">Editar Filtro</button>
+    </div>
+    
+    <div *ngIf="isSmallDisplay()" class="flex-row-wrap-start-center">
+      <button class="full-size-button" id="apply-filter-sm-button" mat-raised-button color="primary" (click)="applyFilter()" i18n="@@apply-filter-button.audit-filter-exclusion.component">Aplicar Filtro</button>
+      <button *ngIf="admin" class="full-size-button" id="apply-filter-sm-button" mat-raised-button color="primary" (click)="openDialogSaveModal(true)" i18n="@@apply-filter-button.audit-filter-exclusion.component">Guardar Filtro Global</button>
+      <button class="full-size-button" mat-raised-button color="primary" (click)="openDialogSaveModal(false)" i18n="@@apply-filter-button.audit-filter-exclusion.component">Guardar Filtro</button>
+      <button class="full-size-button" mat-raised-button color="primary" (click)="openDialogLoadModal()" i18n="@@apply-filter-button.audit-filter-exclusion.component">Cargar Filtro</button>
+      <button class="full-size-button" mat-raised-button color="primary" (click)="openDialogEditModal()" i18n="@@apply-filter-button.audit-filter-exclusion.component">Editar Filtro</button>
+    </div>
+  </div>
+
+  <div *ngIf="editEnable">
+    <div *ngIf="!isSmallDisplay()" class="flex-row-start button-container">
+      <button id="apply-filter-button" mat-raised-button color="primary" (click)="updateFilter()" i18n="@@apply-filter-button.audit-filter-exclusion.component"> Guardar Cambios </button>
+      <button id="apply-filter-button" mat-raised-button color="primary" (click)="closeEditMode()" i18n="@@apply-filter-button.audit-filter-exclusion.component"> Cancelar </button>
+      <button id="apply-filter-button" mat-raised-button color="warn" (click)="deleteFilter()" i18n="@@apply-filter-button.audit-filter-exclusion.component"> Eliminar </button>
+    </div>
+    
+    <div class="flex-row-wrap-start-center" *ngIf="isSmallDisplay()">
+      <button class="full-size-button" id="apply-filter-button" mat-raised-button color="primary" (click)="updateFilter()" i18n="@@apply-filter-button.audit-filter-exclusion.component"> Guardar Cambios </button>
+      <button class="full-size-button" id="apply-filter-button" mat-raised-button color="primary" (click)="closeEditMode()" i18n="@@apply-filter-button.audit-filter-exclusion.component"> Cancelar </button>
+      <button class="full-size-button" id="apply-filter-button" mat-raised-button color="warn" (click)="deleteFilter()" i18n="@@apply-filter-button.audit-filter-exclusion.component"> Eliminar </button>
+    </div>
+  </div>
+</mat-card>
