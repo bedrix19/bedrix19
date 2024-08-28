@@ -1,0 +1,10 @@
+<mat-dialog-content>
+  <mat-form-field>
+    <mat-label>Nombre del filtro</mat-label>
+    <input matInput [(ngModel)]="name" cdkFocusInitial/>
+  </mat-form-field>
+  <mat-dialog-actions>
+    <button mat-button color="warn" mat-dialog-close> Cancelar </button>
+    <button mat-button color="primary" [mat-dialog-close]="name()" cdkFocusInitial> Guardar </button>
+  </mat-dialog-actions>
+</mat-dialog-content>

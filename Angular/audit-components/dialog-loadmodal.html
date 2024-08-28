@@ -1,0 +1,9 @@
+<mat-selection-list [multiple]="false">
+    @for (filter of filterList; track filter) {
+    <mat-card appearance="outlined">
+        <mat-list-item class="filter-item" [mat-dialog-close]="true" (click)="loadFilter(filter.id, filter.name, filter.global)">
+            <div class="font-filter">{{ filter.name }} - [{{ filter.username }}]</div>
+        </mat-list-item>
+    </mat-card>
+    }
+</mat-selection-list>
